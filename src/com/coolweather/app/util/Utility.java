@@ -1,6 +1,5 @@
 package com.coolweather.app.util;
 
-import android.R.integer;
 import android.text.TextUtils;
 
 import com.coolweather.app.model.City;
