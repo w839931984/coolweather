@@ -92,16 +92,6 @@ public class ChooseAreaActivity extends Activity {
 				}
 				
 			}
-
-			private void queryCities() {
-				// TODO Auto-generated method stub
-				
-			}
-
-			private void queryCounties() {
-				// TODO Auto-generated method stub
-				
-			}
 		});
 		queryProvinces();
 	}
@@ -140,6 +130,7 @@ public class ChooseAreaActivity extends Activity {
 			titleText.setText(selectedProvince.getProvinceName());
 			currentLevel = LEVEL_CITY;
 		} else {
+			System.out.println("查询city");
 			queryFromServer(selectedProvince.getProvinceCode(), "city");
 		}
 	}
@@ -159,6 +150,7 @@ public class ChooseAreaActivity extends Activity {
 			titleText.setText(selectedCity.getCityName());
 			currentLevel = LEVEL_COUNTY;
 		} else {
+			System.out.println("查询county");
 			queryFromServer(selectedCity.getCityCode(), "county");
 		}
 	}
@@ -220,6 +212,7 @@ public class ChooseAreaActivity extends Activity {
 	 * 显示进度对话框
 	 */
 	private void showProgressDialog() {
+		System.out.println("显示进度框");
 		if (progressDialog == null) {
 			progressDialog = new ProgressDialog(this);
 			progressDialog.setMessage("正在加载");
@@ -249,6 +242,12 @@ public class ChooseAreaActivity extends Activity {
 		} else {
 			finish();
 		}
-		super.onBackPressed();
 	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+	}
+	
+	
 }

@@ -67,6 +67,7 @@ public class Utility {
 					county.setCityId(cityId);
 					
 					coolWeatherDB.saveCounty(county);
+					System.out.println("存入数据库中");
 				}
 				return true;
 			}
